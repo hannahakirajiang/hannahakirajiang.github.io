@@ -1,0 +1,125 @@
+/*!
+* Lightbox Gallery v1.0 (https://kawshar.github.io/lightboxgallery/)
+* Copyright 2017 Kawshar Ahmed
+* Licensed GPLv3 https://www.gnu.org/licenses/gpl-3.0.en.html
+*/
+
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+	
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.containerArtbox {
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+
+/* Gallery */
+.lightboxgallery-gallery {
+  display: block;
+  margin: 60px -10px;
+	border-radius: 5px;
+}
+.lightboxgallery-gallery-item {
+  cursor: zoom-in;
+  display: block;
+  float: left;
+  width: 33.3333%;
+	border-radius: 5px;
+}
+
+@media only screen and (max-width : 1200px) {
+		.containerArtbox {
+		width: 90%;}
+}
+@media only screen and (max-width : 767px) {
+  .lightboxgallery-gallery-item {
+    width: 50%;
+  }
+		.containerArtbox {
+		width: 90%;}
+}
+
+@media only screen and (max-width : 479px) {
+  .lightboxgallery-gallery-item {
+    width: 100%;
+  }
+}
+
+.lightboxgallery-gallery-item img {
+  width: 100%;
+}
+
+.lightboxgallery-gallery-item > div {
+  position: relative;
+  margin: 10px;
+}
+
+.lightboxgallery-gallery-item > div:after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,.3) 100%);
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,.3) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,.3) 100%);
+  opacity: 0;
+  -webkit-transition: opacity 400ms;
+  transition: opacity 400ms;
+}
+
+.lightboxgallery-gallery-item:hover > div:after {
+  opacity: 1;
+}
+
+.lightboxgallery-gallery-item-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transition: opacity 400ms;
+  transition: opacity 400ms;
+}
+
+.lightboxgallery-gallery-item:hover .lightboxgallery-gallery-item-content {
+  opacity: 1;
+}
+
+.lightboxgallery-gallery-item-title {
+  display: block;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
